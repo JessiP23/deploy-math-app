@@ -1,0 +1,50 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'styling/session.css' %}" >
+  </head>
+  <body>
+    <header>
+      <h2 class="classes">Sessions List</h2>
+      <a href="{% url 'live_session:schedule_session' %}" class="link">Go back</a>
+    </header> 
+    <div class="section"> 
+      <!--SEssion list-->
+      <h2>My Sessions</h2>
+      <p style="font-family: cursive;">Click your class to get details information</p>
+      {% if list_session %}
+      <ul>
+        {% for session in list_session %}
+          <li>
+            <a href="{% url 'live_session:detail_session' session.id %}">{{ session.subject }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+        <p>No sessions scheduled yet.</p>
+      {% endif %}
+      <!--Paypal payment method-->
+      <h2>To Proceed you need a PayPal account</h2>
+      <p>Price for each session: </p>
+      <ul>
+        <!--Prices session-->
+        <li>Placement Test: <strong>$15.00</strong></li>
+        <li>Basic Mathematics: <strong>$17.00</strong></li>
+        <li>Accelerated Algebra: <strong>18.00</strong></li>
+        <li>Precalculus: <strong>$21.00</strong></li>
+        <li>Calculus I <strong>$24.00</strong></li>
+      </ul>
+      <p><strong>You can pay the full session, pay more or the most you can afford.</strong></p>
+      <h3>Here is my Paypal URL:</h3>
+      <!--My Paypal Page-->
+      <a href="https://www.paypal.me/JessiPaviaMartinez">paypal.me/JessiPaviaMartinez</a>
+      <p>Here is my QR code: </p>
+      <!--My Paypal logo-->
+      <img src="{% static 'qrcode.png' %}" alt="expression one step">
+    </div>
+  </body>
+</html> 
