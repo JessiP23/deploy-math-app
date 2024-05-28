@@ -3,8 +3,10 @@ from .views import view_question, question_list, post_question, create_comment
 from django.conf.urls.static import static
 from django.conf import settings
  
+#name of app that connects to the project
 app_name = 'forum'
 
+#url to forum feature
 urlpatterns = [
     path('question_list/', question_list, name="question_list"),
     path('<int:question_id>', view_question, name="view_question"),

@@ -4,6 +4,7 @@ from . import views
 #transferred url into app class
 app_name = 'class'
 
+#url for arithmetic, precalculus, and calculus 1
 urlpatterns = [
     path('whole_number/', views.whole_number,name="whole_number"),
     path('signed_number/', views.signed_number,name="signed_number"),

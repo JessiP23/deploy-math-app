@@ -53,6 +53,8 @@ def LoginPage(request):
 
     return render (request,'login.html')
 
+#Url for Post, Sessions, Classes, Logout, and math subjects
+
 def LogoutPage(request):
     logout(request)
     return redirect('login')

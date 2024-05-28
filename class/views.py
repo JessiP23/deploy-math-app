@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+#view for each topic to each math subject
 def whole_number(request):
     return render(request, 'class_ma010/whole_number.html')
 
