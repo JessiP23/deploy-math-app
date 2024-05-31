@@ -30,3 +30,7 @@ urlpatterns = [
     path('app/', include('app.urls')),
     path('live_session/', include('live_session.urls', namespace="live_session"))
 ] 
+ 
+ 
+if settings.DEBUG: 
+     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
